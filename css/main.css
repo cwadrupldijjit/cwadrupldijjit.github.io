@@ -2,7 +2,7 @@ body {
   height: 200%; }
 
 header {
-  height: 100px; }
+  min-height: 10vh; }
 
 #menu-bar {
   background-color: purple;

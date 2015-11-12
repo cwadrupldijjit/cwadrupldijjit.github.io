@@ -5,5 +5,8 @@ typings
 
 package.json
 bower.json
+
 .bower.json
 .tsdrc
+.picasa.ini
+.picasaoriginals
