@@ -4,12 +4,13 @@
 
 let app = angular.module('PageApp', ['ui.router', 'ngMaterial']);
 
-app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider: any, $urlRouterProvider: any, $locationProvider: any) {
 	$stateProvider
 		.state('Home', {
 			url: '/',
-			templateUrl: '/views/home/home.html',
-			controller: 'HomeController'
+			templateUrl: '/templates/home/home.html',
+			controller: 'HomeController',
+			controllerAs: 'vm'
 		});
 	
 	$urlRouterProvider.otherwise('/');

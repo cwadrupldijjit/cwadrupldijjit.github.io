@@ -6,8 +6,15 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
         $stateProvider
             .state('Home', {
             url: '/',
-            templateUrl: '/views/home/home.html',
-            controller: 'HomeController'
+            templateUrl: '/templates/home/home.html',
+            controller: 'HomeController',
+            controllerAs: 'vm'
         });
         $urlRouterProvider.otherwise('/');
+    }]);
+/// <reference path="../app" />
+app.controller('HomeController', [function () {
+    }]);
+/// <reference path="../app" />
+app.controller('MainController', [function () {
     }]);
