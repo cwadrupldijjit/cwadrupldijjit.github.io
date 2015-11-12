@@ -16,5 +16,17 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
 app.controller('HomeController', [function () {
     }]);
 /// <reference path="../app" />
-app.controller('MainController', [function () {
+app.controller('MainController', ['$location', '$scope', function ($location, $scope) {
+        var vm = this;
+        vm.menuFixed = false;
+        angular.element(window).scroll(function () {
+            if (angular.element(this).scrollTop() > 100) {
+                vm.menuFixed = true;
+                $scope.$apply();
+            }
+            else {
+                vm.menuFixed = false;
+                $scope.$apply();
+            }
+        });
     }]);

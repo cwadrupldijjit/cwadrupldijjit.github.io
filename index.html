@@ -10,16 +10,21 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	
-	<body>
+	<body ng-controller="MainController as mc">
 		<header>
 			Heya!
 		</header>
 		
-		<div id="menu-bar">
+		<div id="menu-bar" ng-class="{'fix-menu': mc.menuFixed}">
 			
 		</div>
 		
-		<ui-view></ui-view>
+		<article layout="row">
+			<ui-view flex></ui-view>
+			<aside id="project-sidebar">
+				<h3 id="project-header">Projects</h3>
+			</aside>
+		</article>
 		
 		<script src="js/libs/jquery.js"></script>
 		<script src="js/libs/angular.js"></script>
