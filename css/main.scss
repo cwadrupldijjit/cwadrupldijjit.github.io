@@ -1,0 +1,28 @@
+body {
+	height: 200%;
+}
+
+
+#avatar-main {
+	width: 40vh;
+	
+	img {
+		width: 100%;
+	}
+}
+
+header {
+	min-height: 10vh;
+}
+
+#menu-bar {
+	background-color: purple;
+	width: 100%;
+	height: 50px;
+}
+
+.fix-menu {
+	position: fixed;
+	left: 0;
+	top: 0;
+}

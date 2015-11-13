@@ -1,0 +1,12 @@
+server
+node_modules
+bower_components
+typings
+
+package.json
+bower.json
+
+.bower.json
+.tsdrc
+.picasa.ini
+.picasaoriginals

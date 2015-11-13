@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" ng-app="PageApp">
 	<head>
 		<meta charset="UTF-8">
 		<title>Samuel Skeen Web Profile</title>
+		
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<link rel="stylesheet" href="css/angular-material.css">
+		<link rel="stylesheet" href="css/main.css">
+		
+		<script src="https://use.typekit.net/pag1dzh.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
 	
-	<body>
-		Heya!
+	<body ng-controller="MainController as mc">
+		<header layout="row">
+			<div id="avatar-main" layout="column">			
+				<img src="assets/avatar1.jpg" alt="Me">
+			</div>
+			
+			<h1 id="name">Samuel Skeen</h1>
+		</header>
+		
+		<div id="menu-bar" ng-class="{'fix-menu': mc.menuFixed}">
+			
+		</div>
+		
+		<article layout="row">
+			<ui-view flex></ui-view>
+			
+			<aside id="project-sidebar">
+				<h3 id="project-header">Projects</h3>
+			</aside>
+		</article>
+		
+		<script src="js/libs/jquery.js"></script>
+		<script src="js/libs/angular.js"></script>
+		<script src="js/libs/angular-ui-router.js"></script>
+		<script src="js/libs/angular-material.js"></script>
+		<script src="js/libs/angular-animate.js"></script>
+		<script src="js/libs/angular-aria.js"></script>
+		<script src="js/app.js"></script>
 	</body>
 </html>
