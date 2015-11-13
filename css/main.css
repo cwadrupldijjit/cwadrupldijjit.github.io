@@ -1,6 +1,11 @@
 body {
   height: 200%; }
 
+#avatar-main {
+  width: 40vh; }
+  #avatar-main img {
+    width: 100%; }
+
 header {
   min-height: 10vh; }
 

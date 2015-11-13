@@ -8,11 +8,18 @@
 		<link rel="stylesheet" href="css/font-awesome.css">
 		<link rel="stylesheet" href="css/angular-material.css">
 		<link rel="stylesheet" href="css/main.css">
+		
+		<script src="https://use.typekit.net/pag1dzh.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
 	
 	<body ng-controller="MainController as mc">
-		<header>
+		<header layout="row">
+			<div id="avatar-main" layout="column">			
+				<img src="assets/avatar1.jpg" alt="Me">
+			</div>
 			
+			<h1 id="name">Samuel Skeen</h1>
 		</header>
 		
 		<div id="menu-bar" ng-class="{'fix-menu': mc.menuFixed}">
