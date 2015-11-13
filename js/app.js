@@ -11,14 +11,16 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', functio
             controllerAs: 'vm'
         });
         $urlRouterProvider.otherwise('/');
+        $locationProvider.html5Mode(true);
     }]);
 /// <reference path="../app" />
 app.controller('HomeController', [function () {
     }]);
 /// <reference path="../app" />
-app.controller('MainController', ['$location', '$scope', function ($location, $scope) {
+app.controller('MainController', ['$location', '$scope', 'MobileService', function ($location, $scope, MobileService) {
         var vm = this;
         vm.menuFixed = false;
+        vm.isMobile = !!MobileService.isMobile.any();
         // angular.element(window).scroll(function() {
         // 	if (angular.element(this).scrollTop() > 100) {
         // 		vm.menuFixed = true;
@@ -28,5 +30,18 @@ app.controller('MainController', ['$location', '$scope', function ($location, $s
         // 		$scope.$apply();
         // 	}
         // });
-        console.log(angular.element('#project-header'));
+    }]);
+/// <reference path="../app" />
+app.service('MobileService', [function () {
+        var svc = this;
+        svc.isMobile = {
+            Android: function () { return !!navigator.userAgent.match(/Android/i); },
+            iOS: function () { return !!navigator.userAgent.match(/iPad|iPhone|iPod/i); },
+            BlackBerry: function () { return !!navigator.userAgent.match(/Blackberry|BB10|Tablet|Mobile/i); },
+            Opera: function () { return !!navigator.userAgent.match(/Opera Mini/i); },
+            Windows: function () { return !!navigator.userAgent.match(/IEMobile/i); },
+            any: function () {
+                return (this.Android() || this.iOS() || this.BlackBerry() || this.Opera() || this.Windows());
+            }
+        };
     }]);

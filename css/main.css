@@ -5,22 +5,33 @@
 
 #header-right {
   position: relative;
-  background-color: #19297A; }
+  background-color: #19297A;
+  background-image: url("../assets/sandy-mountain-background-1.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 0 25%; }
+
+.pull-right {
+  align-self: flex-end; }
 
 .name {
-  width: calc(100% - (2 * 13vw));
+  width: 100%;
   height: 40vh;
-  font-size: calc(4vh * 5);
+  font-size: calc(2vh * 5.5);
   margin: 0;
   line-height: 1em;
-  padding: 0 calc(13vw);
-  position: absolute;
+  padding: 0 13vw;
   color: white;
   text-shadow: 0 0 10px black, 0 0 30px black; }
+  .name .hidden-text {
+    background-image: url("../assets/hidden-text-header.png");
+    background-repeat: no-repeat;
+    background-size: 50em;
+    opacity: .3; }
 
 header {
   min-height: 40vh;
-  box-shadow: 0 0 50px rgba(30, 60, 120, 0.7), 0 0 10px rgba(30, 60, 120, 0.7);
+  box-shadow: 0 0 50px rgba(120, 120, 120, 0.7), 0 0 10px rgba(120, 120, 120, 0.7);
   position: relative;
   z-index: 100; }
 
@@ -37,13 +48,17 @@ header {
 
 #project-pic-sidebar {
   width: 200px;
-  background-color: #313747;
+  background-color: #202750;
   position: relative; }
   #project-pic-sidebar #project-header {
-    background-color: #202750;
+    background-color: #313747;
     color: white;
     position: absolute;
     top: -59.44px;
     z-index: 50;
-    width: 100%;
-    margin: 0; }
+    width: calc(100% - (2* $padding-width));
+    margin: 0;
+    padding: 1em; }
+
+.sidebar-collapsed {
+  width: 200px; }
