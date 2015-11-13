@@ -16,10 +16,13 @@
 	<body ng-controller="MainController as mc">
 		<header layout="row">
 			<div id="avatar-main" layout="column">			
-				<img src="assets/avatar1.jpg" alt="Me">
+				<img src="assets/Avatar1.jpg" alt="Me">
 			</div>
-			
-			<h1 id="name">Samuel Skeen</h1>
+			<div flex id="header-right">
+				<h1 class="name">Samuel <span></span> <br><span class="pull-right">Skeen</span></h1>
+				
+				
+			</div>
 		</header>
 		
 		<div id="menu-bar" ng-class="{'fix-menu': mc.menuFixed}">
@@ -29,7 +32,7 @@
 		<article layout="row">
 			<ui-view flex></ui-view>
 			
-			<aside id="project-sidebar">
+			<aside id="project-pic-sidebar">
 				<h3 id="project-header">Projects</h3>
 			</aside>
 		</article>
