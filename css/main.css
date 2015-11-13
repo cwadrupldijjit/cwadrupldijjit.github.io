@@ -1,20 +1,49 @@
-body {
-  height: 200%; }
-
 #avatar-main {
   width: 40vh; }
   #avatar-main img {
     width: 100%; }
 
+#header-right {
+  position: relative;
+  background-color: #19297A; }
+
+.name {
+  width: calc(100% - (2 * 13vw));
+  height: 40vh;
+  font-size: calc(4vh * 5);
+  margin: 0;
+  line-height: 1em;
+  padding: 0 calc(13vw);
+  position: absolute;
+  color: white;
+  text-shadow: 0 0 10px black, 0 0 30px black; }
+
 header {
-  min-height: 10vh; }
+  min-height: 40vh;
+  box-shadow: 0 0 50px rgba(30, 60, 120, 0.7), 0 0 10px rgba(30, 60, 120, 0.7);
+  position: relative;
+  z-index: 100; }
 
 #menu-bar {
-  background-color: purple;
+  background-color: #313747;
   width: 100%;
-  height: 50px; }
+  font-size: 1.7em;
+  height: 59.44px; }
 
 .fix-menu {
   position: fixed;
   left: 0;
   top: 0; }
+
+#project-pic-sidebar {
+  width: 200px;
+  background-color: #313747;
+  position: relative; }
+  #project-pic-sidebar #project-header {
+    background-color: #202750;
+    color: white;
+    position: absolute;
+    top: -59.44px;
+    z-index: 50;
+    width: 100%;
+    margin: 0; }
