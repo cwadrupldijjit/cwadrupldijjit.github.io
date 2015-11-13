@@ -5,6 +5,8 @@
 		<meta charset="UTF-8">
 		<title>Samuel Skeen Web Profile</title>
 		
+		<base href="/">
+		
 		<link rel="stylesheet" href="css/font-awesome.css">
 		<link rel="stylesheet" href="css/angular-material.css">
 		<link rel="stylesheet" href="css/main.css">
@@ -19,7 +21,15 @@
 				<img src="assets/Avatar1.jpg" alt="Me">
 			</div>
 			<div flex id="header-right">
-				<h1 class="name">Samuel <span></span> <br><span class="pull-right">Skeen</span></h1>
+				<h1 class="name" layout="row">
+					Samuel 
+					
+					<span flex class="hidden-text">
+						
+					</span>
+					 
+					<span>Skeen</span>
+				</h1>
 				
 				
 			</div>
@@ -32,7 +42,12 @@
 		<article layout="row">
 			<ui-view flex></ui-view>
 			
-			<aside id="project-pic-sidebar">
+			<aside id="project-pic-sidebar" 
+				ng-class="{
+					'sidebar-collapsed': (!mc.projOpen && !!vm.isMobile.any()), 
+					'sidebar-wide': (mc.projOpen && !!vm.isMobile.any())
+				}"
+			>
 				<h3 id="project-header">Projects</h3>
 			</aside>
 		</article>
