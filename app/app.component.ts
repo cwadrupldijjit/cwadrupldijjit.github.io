@@ -5,8 +5,8 @@ import { COMMON_DIRECTIVES,
 import { RouteConfig,
 		 ROUTER_DIRECTIVES,
 		 ROUTER_PROVIDERS } from 'angular2/router';
-import { HomeComponent } from './components/home/home.component';
-import { TsParallaxComponent } from './components/ts-parallax/ts-parallax.component';
+import { HomeComponent } from './subpages/home/home.component';
+import { ng2ParallaxMain } from './subpages/ng2-parallax/components/ng2-parallax-main/ng2-parallax-main.component';
 
 @Component({
 	selector: 'app',
@@ -23,8 +23,8 @@ import { TsParallaxComponent } from './components/ts-parallax/ts-parallax.compon
 	]
 })
 @RouteConfig([
-	{ path: '/ng2-parallax/', 			 component: HomeComponent, 		 as: 'Home' },
-	{ path: '/ng2-parallax/ts-parallax', component: TsParallaxComponent, as: 'TS-Parallax'}
+	{ path: '/', 				 component: HomeComponent,		 as: 'Home'},
+	{ path: '/ng2-parallax/...', component: ng2ParallaxMain,	 as: 'ng2-parallax' }
 ])
 
 class AppComponent {
