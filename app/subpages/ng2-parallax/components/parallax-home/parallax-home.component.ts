@@ -1,8 +1,5 @@
 import { Component,
 		 View } from 'angular2/core';
-import { RouteConfig,
-		 ROUTER_DIRECTIVES } from 'angular2/router';
-import { tsExamples } from '../ts-examples/ts-examples.component';
 import { GistParser } from '../../directives/ng2-gist-parser.directive'
 
 @Component({
@@ -10,17 +7,16 @@ import { GistParser } from '../../directives/ng2-gist-parser.directive'
 })
 @View({
 	templateUrl: 'app/subpages/ng2-parallax/components/ng2-parallax-main/ng2-parallax-main.template.html',
+	styleUrls: [
+		
+	],
 	directives: [
-		ROUTER_DIRECTIVES,
 		GistParser
 	]
 })
-@RouteConfig([
-	{ path: './', 		component: tsExamples, as: 'ng2-home' }
-])
 
-class ng2ParallaxMain {
+class ParallaxHome {
 	
 }
 
-export { ng2ParallaxMain };
+export { ParallaxHome };
