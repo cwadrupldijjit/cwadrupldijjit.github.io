@@ -5,13 +5,11 @@ var watch = require('gulp-watch');
 var sourcemaps = require('gulp-sourcemaps');
 
 var tsconfig = {
-	compilerOptions: {
-		module: "system",
-		moduleResolution: "node",
-		emitDecoratorMetadata: true,
-		experimentalDecorators: true,
-		target: "es5"
-	}
+	module: "system",
+	moduleResolution: "node",
+	emitDecoratorMetadata: true,
+	experimentalDecorators: true,
+	target: "es5"
 };
 var pathToTs = './app/**/*.ts';
 var pathToSass = './app/**/*.scss';

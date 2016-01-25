@@ -1,6 +1,6 @@
 <header layout="row">
 	<div id="avatar-main" layout="column">			
-		<img src="assets/Avatar1.jpg" alt="Me">
+		<img src="app/assets/Avatar1.jpg" alt="Me">
 	</div>
 	<div flex id="header-right">
 		<h1 class="name" layout="row">
@@ -20,7 +20,7 @@
 </div>
 
 <article layout="row">
-	<ui-view flex></ui-view>
+	<router-outlet></router-outlet>
 	
 	<aside id="project-pic-sidebar" 
 		ng-class="{

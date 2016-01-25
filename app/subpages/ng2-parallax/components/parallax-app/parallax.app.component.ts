@@ -24,8 +24,8 @@ import { tsExamples } from '../ts-examples/ts-examples.component';
 	]
 })
 @RouteConfig([
-	{ path: './', 			 component: ParallaxHome, as: 'ng2-home' },
-	{ path: './ts-examples', component: tsExamples, as: 'ts-examples'}
+	{ path: './', 			 component: ParallaxHome, as: 'Ng2Home' },
+	{ path: './ts-examples', component: tsExamples, as: 'TsExamples'}
 ])
 
 class ParallaxApp {

@@ -15,7 +15,7 @@ import { ParallaxApp } from './subpages/ng2-parallax/components/parallax-app/par
 	]
 })
 @View({
-	templateUrl : `app/app.html`,
+	templateUrl : `app/app.template.html`,
 	directives: [
 		ROUTER_DIRECTIVES,
 		CORE_DIRECTIVES,
@@ -23,8 +23,8 @@ import { ParallaxApp } from './subpages/ng2-parallax/components/parallax-app/par
 	]
 })
 @RouteConfig([
-	{ path: '/...',				 component: HomeAppComponent, as: 'Home'},
-	{ path: '/ng2-parallax/...', component: ParallaxApp,	  as: 'ng2-parallax' }
+	{ path: '/home/...',		 component: HomeAppComponent, as: 'Home', 		useAsDefault: true},
+	{ path: '/ng2-parallax/...', component: ParallaxApp,	  as: 'Ng2Parallax' }
 ])
 
 class AppComponent {

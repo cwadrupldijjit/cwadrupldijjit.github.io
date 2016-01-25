@@ -8,13 +8,13 @@ import { HomeMainComponent } from '../home-main/home-main.component';
 	selector: 'home'
 })
 @View({
-	templateUrl: 'app/subpages/home/home.template.html',
+	templateUrl: 'app/subpages/home/components/home-app/home.app.template.html',
 	directives: [
 		ROUTER_DIRECTIVES
 	]
 })
 @RouteConfig([
-	{ path: './', component: HomeMainComponent, as: 'home-main' }
+	{ path: './', component: HomeMainComponent, as: 'HomeMain' }
 ])
 
 class HomeAppComponent {
