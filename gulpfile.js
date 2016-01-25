@@ -2,37 +2,43 @@ var gulp = require('gulp');
 var ts = require('gulp-typescript');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
+var sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('sass', function() {
-	gulp.src('./css/**/*.scss')
-		.pipe(sass({outFile: 'main.css'}).on('error', sass.logError))
-		.pipe(gulp.dest('./css'));
-});
+var tsconfig = {
+	compilerOptions: {
+		module: "system",
+		moduleResolution: "node",
+		emitDecoratorMetadata: true,
+		experimentalDecorators: true,
+		target: "es5"
+	}
+};
+var pathToTs = './app/**/*.ts';
+var pathToSass = './app/**/*.scss';
 
-gulp.task('ts', function() {
-	gulp.src('./ts/**/*.ts')
-		.pipe(ts({
-			noImplicitAny: true,
-			outFile: 'app.js'
-		}))
-		.pipe(gulp.dest('./js'));
-});
+function sassCompile() {
+	gulp.src(pathToSass)
+		.pipe(sourcemaps.init())
+			.pipe(sass().on('error', sass.logError))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('./app/'));
+}
 
-gulp.task('watch', function() {
-	watch('./css/**/*.scss', function() {
-		gulp.src('./css/**/*.scss')
-			.pipe(sass({outFile: 'main.css'}).on('error', sass.logError))
-			.pipe(gulp.dest('./css'));
-	});
-	
-	watch('./ts/**/*.ts', function() {
-		gulp.src('./ts/**/*.ts')
-			.pipe(ts({
-				noImplicitAny: true,
-				outFile: 'app.js'
-			}))
-			.pipe(gulp.dest('./js'));
-	});
-});
+function tsCompile() {
+	gulp.src(pathToTs)
+		.pipe(sourcemaps.init())
+			.pipe(ts(tsconfig))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('./app/'));
+}
+
+function watcher() {
+	watch(pathToSass, sassCompile);
+	watch(pathToTs, tsCompile);
+}
+
+gulp.task('sass', sassCompile);
+gulp.task('ts', tsCompile);
+gulp.task('watch', watcher);
 
 gulp.task('default', ['ts', 'sass', 'watch']);
