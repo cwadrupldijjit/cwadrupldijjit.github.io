@@ -16,41 +16,27 @@
 	</head>
 	
 	<body ng-controller="MainController as mc">
-		<header layout="row">
-			<div id="avatar-main" layout="column">			
-				<img src="assets/Avatar1.jpg" alt="Me">
-			</div>
-			<div flex id="header-right">
-				<h1 class="name" layout="row">
-					Samuel 
-					
-					<span flex class="hidden-text">
-						
-					</span>
-					 
-					<span>Skeen</span>
-				</h1>
-				
-				
-			</div>
-		</header>
+		<app>Main App Loading . . .</app>
 		
-		<div id="menu-bar" ng-class="{'fix-menu': mc.menuFixed}">
+		<section class="hidden-snippets">
+			<!--home.template.html gists to import-->
+			<div id="ts-imports">
+				<script src="https://gist.github.com/cwadrupldijjit/1afedd53fee0719be268.js"></script>
+			</div>
+			<div id="ts-add-directive">
+				<script src="https://gist.github.com/cwadrupldijjit/8fc3e989e7fd02fbd5f6.js"></script>
+			</div>
+			<div id="ts-add-directive-alt">
+				<script src="https://gist.github.com/cwadrupldijjit/31db105441c5f416986e.js"></script>				
+			</div>
+			<div id="add-to-html">
+				<script src="https://gist.github.com/cwadrupldijjit/b9430fb819a9b8b926bd.js"></script>
+			</div>
+			<div id="customize-parallax">
+				<script src="https://gist.github.com/cwadrupldijjit/41fbd1992acf9ad39a2f.js"></script>
+			</div>
 			
-		</div>
-		
-		<article layout="row">
-			<ui-view flex></ui-view>
-			
-			<aside id="project-pic-sidebar" 
-				ng-class="{
-					'sidebar-collapsed': (!mc.projOpen && !!vm.isMobile.any()), 
-					'sidebar-wide': (mc.projOpen && !!vm.isMobile.any())
-				}"
-			>
-				<h3 id="project-header">Projects</h3>
-			</aside>
-		</article>
+		</section>
 		
 		<script src="js/libs/jquery.js"></script>
 		<script src="js/libs/angular.js"></script>
