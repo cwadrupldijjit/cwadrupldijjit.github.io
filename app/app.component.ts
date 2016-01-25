@@ -23,7 +23,7 @@ import { ParallaxApp } from './subpages/ng2-parallax/components/parallax-app/par
 	]
 })
 @RouteConfig([
-	{ path: '/', 				 component: HomeAppComponent, as: 'Home'},
+	{ path: '/...',				 component: HomeAppComponent, as: 'Home'},
 	{ path: '/ng2-parallax/...', component: ParallaxApp,	  as: 'ng2-parallax' }
 ])
 
