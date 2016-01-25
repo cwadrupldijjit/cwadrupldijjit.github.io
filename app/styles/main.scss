@@ -78,7 +78,8 @@ header {
 #project-pic-sidebar {
 	width: 200px;
 	background-color: #202750;
-	position: relative;
+	position: absolute;
+	right: 0;
 	
 	#project-header {
 		$padding-width: 1em;
@@ -87,6 +88,7 @@ header {
 		color: white;
 		position: absolute;
 		top: -59.44px;
+		right: 0;
 		z-index: 50;
 		width: calc(100% - (2* $padding-width));
 		margin: 0;

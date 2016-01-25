@@ -21,8 +21,17 @@ System.register(['angular2/core'], function(exports_1) {
                 function HomeMainComponent() {
                 }
                 HomeMainComponent = __decorate([
-                    core_1.Component({}),
-                    core_1.View({}), 
+                    core_1.Component({
+                        selector: 'home-main'
+                    }),
+                    core_1.View({
+                        templateUrl: 'app/subpages/home/components/home-main/home-main.template.html',
+                        styleUrls: [
+                            'app/styles/normalize.css',
+                            'app/styles/main.css',
+                            'app/subpages/home/styles/main.css'
+                        ]
+                    }), 
                     __metadata('design:paramtypes', [])
                 ], HomeMainComponent);
                 return HomeMainComponent;
@@ -32,4 +41,4 @@ System.register(['angular2/core'], function(exports_1) {
     }
 });
 
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN1YnBhZ2VzL2hvbWUvY29tcG9uZW50cy9ob21lLW1haW4vaG9tZS1tYWluLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6WyJIb21lTWFpbkNvbXBvbmVudCIsIkhvbWVNYWluQ29tcG9uZW50LmNvbnN0cnVjdG9yIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFHQSx3QkFBd0I7WUFFeEI7Z0JBQUFBO2dCQUtBQyxDQUFDQTtnQkFMREQ7b0JBQUNBLGdCQUFTQSxDQUFDQSxFQUFFQSxDQUFDQTtvQkFDYkEsV0FBSUEsQ0FBQ0EsRUFBRUEsQ0FBQ0E7O3NDQUlSQTtnQkFBREEsd0JBQUNBO1lBQURBLENBTEEsQUFLQ0EsSUFBQTtZQUVRLGlEQUFpQiIsImZpbGUiOiJzdWJwYWdlcy9ob21lL2NvbXBvbmVudHMvaG9tZS1tYWluL2hvbWUtbWFpbi5jb21wb25lbnQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsXHJcblx0XHQgVmlldyB9IGZyb20gJ2FuZ3VsYXIyL2NvcmUnO1xyXG5pbXBvcnQgeyBST1VURVJfRElSRUNUSVZFUyB9IGZyb20gJ2FuZ3VsYXIyL3JvdXRlcic7XHJcbi8vIGltcG9ydCB7IH0gZnJvbSAnLi4vJ1xyXG5cclxuQENvbXBvbmVudCh7fSlcclxuQFZpZXcoe30pXHJcblxyXG5jbGFzcyBIb21lTWFpbkNvbXBvbmVudCB7XHJcblx0XHJcbn1cclxuXHJcbmV4cG9ydCB7IEhvbWVNYWluQ29tcG9uZW50IH07Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN1YnBhZ2VzL2hvbWUvY29tcG9uZW50cy9ob21lLW1haW4vaG9tZS1tYWluLmNvbXBvbmVudC50cyJdLCJuYW1lcyI6WyJIb21lTWFpbkNvbXBvbmVudCIsIkhvbWVNYWluQ29tcG9uZW50LmNvbnN0cnVjdG9yIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7WUFHQSx3QkFBd0I7WUFFeEI7Z0JBQUFBO2dCQWNBQyxDQUFDQTtnQkFkREQ7b0JBQUNBLGdCQUFTQSxDQUFDQTt3QkFDVkEsUUFBUUEsRUFBRUEsV0FBV0E7cUJBQ3JCQSxDQUFDQTtvQkFDREEsV0FBSUEsQ0FBQ0E7d0JBQ0xBLFdBQVdBLEVBQUdBLGdFQUFnRUE7d0JBQzlFQSxTQUFTQSxFQUFHQTs0QkFDWEEsMEJBQTBCQTs0QkFDMUJBLHFCQUFxQkE7NEJBQ3JCQSxtQ0FBbUNBO3lCQUNuQ0E7cUJBQ0RBLENBQUNBOztzQ0FJREE7Z0JBQURBLHdCQUFDQTtZQUFEQSxDQWRBLEFBY0NBLElBQUE7WUFFUSxpREFBaUIiLCJmaWxlIjoic3VicGFnZXMvaG9tZS9jb21wb25lbnRzL2hvbWUtbWFpbi9ob21lLW1haW4uY29tcG9uZW50LmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQ29tcG9uZW50LFxyXG5cdFx0IFZpZXcgfSBmcm9tICdhbmd1bGFyMi9jb3JlJztcclxuaW1wb3J0IHsgUk9VVEVSX0RJUkVDVElWRVMgfSBmcm9tICdhbmd1bGFyMi9yb3V0ZXInO1xyXG4vLyBpbXBvcnQgeyB9IGZyb20gJy4uLydcclxuXHJcbkBDb21wb25lbnQoe1xyXG5cdHNlbGVjdG9yOiAnaG9tZS1tYWluJ1xyXG59KVxyXG5AVmlldyh7XHJcblx0dGVtcGxhdGVVcmwgOiAnYXBwL3N1YnBhZ2VzL2hvbWUvY29tcG9uZW50cy9ob21lLW1haW4vaG9tZS1tYWluLnRlbXBsYXRlLmh0bWwnLFxyXG5cdHN0eWxlVXJscyA6IFtcclxuXHRcdCdhcHAvc3R5bGVzL25vcm1hbGl6ZS5jc3MnLFxyXG5cdFx0J2FwcC9zdHlsZXMvbWFpbi5jc3MnLFxyXG5cdFx0J2FwcC9zdWJwYWdlcy9ob21lL3N0eWxlcy9tYWluLmNzcydcclxuXHRdXHJcbn0pXHJcblxyXG5jbGFzcyBIb21lTWFpbkNvbXBvbmVudCB7XHJcblx0XHJcbn1cclxuXHJcbmV4cG9ydCB7IEhvbWVNYWluQ29tcG9uZW50IH07Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9

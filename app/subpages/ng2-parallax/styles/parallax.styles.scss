@@ -1,0 +1,58 @@
+.note {
+	font-style: italic;
+	
+	font-size: .9rem;
+	color: #aaa;
+}
+
+h2 {
+	font-weight: bolder;
+}
+
+ol > li {
+	margin-bottom: .6rem;
+}
+
+nav {
+	display: flex;
+}
+
+.spacer {
+	/*display: block;*/
+	flex: 1;
+}
+
+.disabled-option {
+	color: #aaa;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.disabled-option:hover {
+	text-decoration: none;
+	cursor: default;
+}
+
+.coming {
+	font-size: .7rem;
+}
+
+@media screen and (min-width: 64em) {
+  .main-content {
+    max-width: 64rem;
+    padding: 1rem 6rem;
+    margin: 0 auto;
+    font-size: 1.1rem; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .main-content {
+    padding: 1rem 4rem;
+    font-size: 1.1rem; } }
+
+@media screen and (max-width: 42em) {
+  .main-content {
+    padding: 1rem 1rem;
+    font-size: 1rem; } }

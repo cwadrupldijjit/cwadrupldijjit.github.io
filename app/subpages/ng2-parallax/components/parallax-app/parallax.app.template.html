@@ -7,7 +7,25 @@
 </section>
 
 <section class="main-content">
-	<parallax-app>Loading . . .</parallax-app>
+	<nav>
+		<a href="JavaScript:void(0)" [routerLink]="['./Ng2Home']">
+			<span>Welcome</span>
+		</a>
+		<span class="spacer"></span>
+		<a href="JavaScript:void(0)" [routerLink]="['./TsExamples']">
+			<span>TypeScript Example</span>
+		</a>
+		<span class="spacer"></span>
+		<a class="disabled-option">
+			<span>JavaScript Example <span class="coming">(coming soon)</span></span>
+		</a>
+		<span class="spacer"></span>
+		<a class="disabled-option">
+			<span>Dart Example <span class="coming">(coming soon)</span></span>
+		</a>
+	</nav>
+	
+	<router-outlet></router-outlet>
 	
 	<footer class="site-footer">
 		<span class="site-footer-owner"><a href="https://github.com/cwadrupldijjit/ng2-parallax">ng2-parallax</a> is maintained by <a href="https://github.com/cwadrupldijjit">cwadrupldijjit</a>.</span>
@@ -16,22 +34,4 @@
 	</footer>
 </section>
 
-<nav>
-	<a href="JavaScript:void(0)" [routerLink]="['./ng2-home']">
-		<span>Welcome</span>
-	</a>
-	<span class="spacer"></span>
-	<a href="JavaScript:void(0)" [routerLink]="['./ts-examples']">
-		<span>TypeScript Example</span>
-	</a>
-	<span class="spacer"></span>
-	<a class="disabled-option">
-		<span>JavaScript Example <span class="coming">(coming soon)</span></span>
-	</a>
-	<span class="spacer"></span>
-	<a class="disabled-option">
-		<span>Dart Example <span class="coming">(coming soon)</span></span>
-	</a>
-</nav>
 
-<router-outlet></router-outlet>

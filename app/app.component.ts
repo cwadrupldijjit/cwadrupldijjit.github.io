@@ -1,5 +1,6 @@
 import { Component,
-		 View } from 'angular2/core';
+		 View,
+		 OnInit } from 'angular2/core';
 import { COMMON_DIRECTIVES,
 		 CORE_DIRECTIVES } from 'angular2/common';
 import { RouteConfig,
@@ -27,8 +28,10 @@ import { ParallaxApp } from './subpages/ng2-parallax/components/parallax-app/par
 	{ path: '/ng2-parallax/...', component: ParallaxApp,	  as: 'Ng2Parallax' }
 ])
 
-class AppComponent {
-	
+class AppComponent implements OnInit {
+	ngOnInit() {
+		console.log("AppComponent init");
+	}
 }
 
 export { AppComponent };
