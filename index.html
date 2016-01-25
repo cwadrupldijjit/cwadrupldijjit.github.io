@@ -11,6 +11,26 @@
 		<link rel="stylesheet" href="app/styles/font-awesome.css">
 		<link rel="stylesheet" href="app/styles/main.css">
 		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.17/system.js"></script>
+		<script src="https://code.angularjs.org/2.0.0-beta.1/angular2.dev.js"></script>
+		<script src="https://code.angularjs.org/2.0.0-beta.1/Rx.min.js"></script>
+		<script src="https://code.angularjs.org/2.0.0-beta.1/angular2-polyfills.min.js"></script>
+		<script src="https://code.angularjs.org/2.0.0-beta.1/router.dev.js"></script>
+		<script src="https://code.angularjs.org/2.0.0-beta.1/http.dev.js"></script>
+		<script>
+			System.config({
+				packages: {        
+					app: {
+						format: 'register',
+						defaultExtension: 'js'
+					}
+				}
+			});
+			
+			System.import('app/boot')
+				  .then(null, console.error.bind(console));
+		</script>
+		
 		<script src="https://use.typekit.net/pag1dzh.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
@@ -37,25 +57,5 @@
 			</div>
 			
 		</section>
-		
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.17/system.js"></script>
-		<script src="https://code.angularjs.org/2.0.0-beta.1/angular2.dev.js"></script>
-		<script src="https://code.angularjs.org/2.0.0-beta.1/Rx.min.js"></script>
-		<script src="https://code.angularjs.org/2.0.0-beta.1/angular2-polyfills.min.js"></script>
-		<script src="https://code.angularjs.org/2.0.0-beta.1/router.dev.js"></script>
-		<script src="https://code.angularjs.org/2.0.0-beta.1/http.dev.js"></script>
-		<script>
-			System.config({
-				packages: {        
-					app: {
-						format: 'register',
-						defaultExtension: 'js'
-					}
-				}
-			});
-			
-			System.import('app/boot')
-				  .then(null, console.error.bind(console));
-		</script>
 	</body>
 </html>
