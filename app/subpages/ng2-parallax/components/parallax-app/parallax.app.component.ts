@@ -13,6 +13,9 @@ import { tsExamples } from '../ts-examples/ts-examples.component';
 @View({
 	templateUrl: 'app/subpages/ng2-parallax/components/parallax-app/parallax.app.template.html',
 	styleUrls: [
+		'app/styles/normalize.css',
+		'app/subpages/ng2-parallax/styles/github-light.css',
+		'app/subpages/ng2-parallax/styles/beginning-stylesheet.css',
 		'app/subpages/ng2-parallax/components/parallax-app/parallax.app.styles.css'
 	],
 	directives: [

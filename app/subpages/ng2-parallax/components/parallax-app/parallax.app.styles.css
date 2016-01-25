@@ -1,0 +1,45 @@
+.note {
+	font-style: italic;
+	
+	font-size: .9rem;
+	color: #aaa;
+}
+
+h2 {
+	font-weight: bolder;
+}
+
+ol > li {
+	margin-bottom: .6rem;
+}
+
+nav {
+	display: flex;
+}
+
+.spacer {
+	/*display: block;*/
+	flex: 1;
+}
+
+.disabled-option {
+	color: #aaa;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.disabled-option:hover {
+	text-decoration: none;
+	cursor: default;
+}
+
+.coming {
+	font-size: .7rem;
+}
+
+.hidden-snippets {
+	display: none;
+}
