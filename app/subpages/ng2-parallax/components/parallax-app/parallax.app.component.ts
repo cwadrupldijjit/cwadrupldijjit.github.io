@@ -29,7 +29,7 @@ import { tsExamples } from '../ts-examples/ts-examples.component';
 	]
 })
 @RouteConfig([
-	{ path: './', 			 component: ParallaxHome, 	as: 'Ng2Home', 	  useAsDefault: true },
+	{ path: './', 			 component: ParallaxHome, 	as: 'ParallaxHome', 	  useAsDefault: true },
 	{ path: './ts-examples', component: tsExamples, 	as: 'TsExamples' }
 ])
 
