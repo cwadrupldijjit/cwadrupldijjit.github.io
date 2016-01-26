@@ -2,18 +2,14 @@ import { Component,
 		 View,
 		 OnInit } from 'angular2/core';
 import { RouteConfig,
-		 ROUTER_DIRECTIVES,
-		 ROUTER_PROVIDERS } from 'angular2/router';
+		 ROUTER_DIRECTIVES } from 'angular2/router';
 import { Parallax,
 		 ParallaxConfig } from '../../directives/ng2-parallax.directive';
 import { ParallaxHome } from '../parallax-home/parallax-home.component';
 import { tsExamples } from '../ts-examples/ts-examples.component';
 
 @Component({
-	selector: 'parallax-app',
-	providers: [
-		// ROUTER_PROVIDERS
-	]
+	selector: 'parallax-app'
 })
 @View({
 	templateUrl: 'app/subpages/ng2-parallax/components/parallax-app/parallax.app.template.html',
@@ -29,8 +25,8 @@ import { tsExamples } from '../ts-examples/ts-examples.component';
 	]
 })
 @RouteConfig([
-	{ path: './', 			 component: ParallaxHome, 	as: 'ParallaxHome', 	  useAsDefault: true },
-	{ path: './ts-examples', component: tsExamples, 	as: 'TsExamples' }
+	{ path: '/', 			 component: ParallaxHome, 	as: 'ParallaxHome',	useAsDefault: true },
+	{ path: '/ts-examples', component: tsExamples, 	as: 'TsExamples' }
 ])
 
 class ParallaxApp implements OnInit {
