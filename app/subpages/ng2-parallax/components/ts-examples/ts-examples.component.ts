@@ -8,7 +8,7 @@ import { GistParser } from '../../directives/ng2-gist-parser.directive';
 	selector: 'ts-examples'
 })
 @View({
-	templateUrl: './app/subpages/ng2-parallax/components/ts-examples/ts-examples.template.html',
+	templateUrl: 'app/subpages/ng2-parallax/components/ts-examples/ts-examples.template.html',
 	styleUrls: [
 		'app/styles/normalize.css',
 		'app/subpages/ng2-parallax/styles/beginning-stylesheet.css',

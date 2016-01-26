@@ -22,7 +22,7 @@ import { HomeMainComponent } from '../home-main/home-main.component';
 	]
 })
 @RouteConfig([
-	{ path: './', component: HomeMainComponent, as: 'HomeMain', useAsDefault: true }
+	{ path: '/', component: HomeMainComponent, as: 'HomeMain', useAsDefault: true }
 ])
 
 class HomeAppComponent implements OnInit {
