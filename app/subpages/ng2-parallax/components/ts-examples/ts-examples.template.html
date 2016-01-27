@@ -12,23 +12,10 @@
 <div parallax id="first-example"></div>
 
 <h5>HTML:</h5>
-<pre>
-	&lt;div parallax id="first-example"&gt;&lt;/div&gt;
-</pre>
+<div gist gistId="simple-parallax"></div>
 
 <h5>CSS:</h5>
-<pre>
-    *[parallax] {
-        width: 700px;
-        height: 300px;
-        
-        background-size: 100%;
-    }
-    
-    #first-example {
-        background-image: url('./assets/dawn-190055.jpg');
-    }
-</pre>
+<div gist gistId="simple-styles"></div>
 
 <p>
 	NOTE: Each of the examples are set up similarly as far as the styles go, so I'll leave you to decide on the styling.
@@ -47,45 +34,19 @@
 }" id="second-example"></div>
 
 <h5>HTML:</h5>
-<pre>
-    &lt;div parallax [config]="{
-        parallaxInitVal: 50,
-        parallaxRatio: .26
-    }" id="second-example"&gt;&lt;/div&gt;
-</pre>
+<div gist gistId="custom-parallax"></div>
 
 <p>
 	Or define the config object in your component class and just pass the reference through the HTML.  Cool thing about this is that then you could use the ParallaxConfig interface exported with the directive to type-check what you're sending it.
 </p>
 <h5>TS:</h5>
-<pre>
-    @Component({ . . . })
-    class AppComponent {
-        <u><b>parallaxConfig</b></u>: ParallaxConfig = {
-            parallaxInitVal: -300,
-            parallaxRatio: .3
-        };
-		
-        constructor() {}
-    }
-</pre>
+<div gist gistId="custom-parallax-ts"></div>
 <h5>HTML:</h5>
-<pre>
-    (preferred syntax)
-    &lt;div parallax [config]="<u><b>parallaxConfig</b></u>" id="second-example"&gt;&lt;/div&gt;
-	
-    (alternative data-binding syntax)
-    &lt;div parallax config="{{<u><b>parallaxConfig</b></u>}}" id="second-example"&gt;&lt;/div&gt;
-</pre>
+<div gist gistId="custom-parallax-html-object"></div>
 <p>
 	If all you're doing is changing one or two things, you can also reference those specific attributes through HTML instead of a config object:
 </p>
-<pre>
-    &lt;div parallax 
-        [parallaxInitVal]="-300"
-        [parallaxRatio]=".3"
-    id="second-example"&gt;&lt;/div&gt;
-</pre>
+<div gist gistId="custom-parallax-individual-attributes"></div>
 <p>
 	My preference is just use the config object, defined in HTML, though I've used the other strategies before, too.  Remember that with either of the data-binding syntaxes, you need to make sure that it make sense from a JavaScript standpoint (e.g. strings are strings, numbers are numbers, variables are variables).
 </p>
@@ -113,34 +74,14 @@
 </div>
 
 <h5>HTML:</h5>
-<pre>
-    &lt;div parallax [config]="{
-    	parallaxCss: 'backgroundPositionX',
-    	parallaxRatio: -3,
-    	scrollerId: 'special-scroll-3'
-    }" id="third-example"&gt;&lt;/div&gt;
-	
-    &lt;div id="special-scroll-3"&gt;
-        . . . CONTENT . . .
-    &lt;/div&gt;
-</pre>
+<div gist gistId="other-scroll-id"></div>
 
 <p>
 	You could also specify the scrolling-watched element from the HTML via the ng2 special syntax of defining an element variable in the template.  Just be mindful that the '#' does gets included, not on the config object, but on the element you're wanting to pass into the object.
 </p>
 
 <h5>HTML:</h5>
-<pre>
-    &lt;div parallax [config]="{
-    	parallaxCss: 'backgroundPositionX',
-    	parallaxRatio: -3,
-    	scrollElement: <u><b>scroller</b></u>
-    }" id="third-example"&gt;&lt;/div&gt;
-	
-    &lt;div id="special-scroll-3" <u><b>#scroller</b></u>&gt;
-        . . . CONTENT . . .
-    &lt;/div&gt;
-</pre>
+<div gist gistId="other-scroll-var"></div>
 
 <p>
 	You also have the 'parallaxElement' option you can pass into the config object as well, if the element you're wanting the effect to apply to isn't the element you're putting the "parallax" attribute onto.  Usually, you would put the "parallax" attribute straight onto the element you'd want the scrolling to modify, but the option is open to you.  It'd be using the same syntax of "#" on the element you want it to apply to, however you can't currently pass in the string id of the parallax element.  That feature will be added if people request it.
@@ -179,28 +120,7 @@
 </div>
 
 <h5>HTML:</h5>
-<pre>
-    &lt;h4 parallax [config]="{
-        parallaxCss: 'left',
-        parallaxRatio: 7,
-        scrollElement: specialScroller4
-    }" id="fourth-example-text"&gt;I move when you scroll!&lt;/h4&gt;
-	
-    &lt;img src="./app/assets/sun-151763_640.png" id="fourth-example-logo"
-        parallax [config]="{
-            parallaxCss: 'transform:rotate',
-            cssUnit: 'deg',
-            parallaxRatio: 5,
-            maxValue: 170,
-            minValue: -10,
-            parallaxInitVal: -190,
-            scrollElement: specialScroller4
-        }"&gt;
-	
-    &lt;div id="special-scroll-4" class="example-textboxes" #specialScroller4&gt;
-        . . . CONTENT . . .
-    &lt;/div&gt;
-</pre>
+<div gist gistId="moar-customization"></div>
 
 <p>
 	You can see that elements can move about according to the scroll, you can set maximum and minimum constraints, specify a different unit, and use special css syntaxes (in regards to the 'transform:rotate').  Most css attributes work when you plug it in to the parallaxCss property of the config, but you have to make sure it is in camelCase, and if it's a special property, (e.g. "rotate(VALUE)", "calc(VALUE)", "translate(VALUE)", etc.) that you add the ":" and the modifier without the parentheses and value ("rotate", "calc", etc.).  With that, you should be able to have no problems with the css properties you pass in.
@@ -233,27 +153,9 @@
 </div>
 
 <h5>HTML:</h5>
-<pre>
-    &lt;h4 parallax [config]="{
-        <b>cb</b>: parallaxFn,
-        <b>cb_context</b>: <u>colorChange</u>,
-        <b>cb_args</b>: ['g', 200, 50, 0],
-        scrollElement: <u>specialScroller5</u>
-    }" id="fifth-example-text" <u>#colorChange</u>&gt;I move when you scroll!&lt;/h4&gt;
-	
-    &lt;div id="special-scroll-5" class="example-textboxes" <u>#specialScroller5</u>&gt;
-        . . . CONTENT . . .
-    &lt;/div&gt;
-</pre>
+<div gist gistId="template-callbacks"></div>
 <h5>TS:</h5>
-<pre>
-    @Component({ . . . })
-    class AppComponent {
-        parallaxFn(color: string, maxVal: number = 250, minVal: number = 0, otherValue: number = 0) {
-            // put logic here
-        }
-    }
-</pre>
+<div gist gistId="typescript-callbacks"></div>
 
 <p>
 	A lot is going on here.  I specified three new things in my parallax config object: "cb", "cb_context", and "cb_args".  "cb" is the callback function you'd want the parallax directive to call when it evaluates the scroll. "cb_context" is the context you want the function to run in, or the explicit "this" binding for the function. "cb_args" is an array of the arguments you want to pass into the function.  Because of the many moving parts that come into play when you specify a callback function for the parallax directive to run, I would suggest you try to acheive the affects you want without having to resort to this, but this is a viable option in case more complex logic is needed.
