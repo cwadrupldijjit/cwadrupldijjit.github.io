@@ -1,5 +1,8 @@
+/// <reference path="../../../../../typings/google.analytics/ga" />
+
 import { Component,
-		 View } from 'angular2/core';
+		 View,
+         AfterContentInit } from 'angular2/core';
 import { GistParser } from '../../directives/ng2-gist-parser.directive'
 
 @Component({
@@ -18,8 +21,10 @@ import { GistParser } from '../../directives/ng2-gist-parser.directive'
 	]
 })
 
-class ParallaxHome {
-	
+class ParallaxHome implements AfterContentInit {
+	ngAfterContentInit() {
+        ga('send', 'pageview');
+    }
 }
 
 export { ParallaxHome };

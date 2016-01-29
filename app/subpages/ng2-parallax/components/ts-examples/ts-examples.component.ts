@@ -1,5 +1,8 @@
+/// <reference path="../../../../../typings/google.analytics/ga" />
+
 import { Component,
-		 View } from 'angular2/core';
+		 View,
+         AfterContentInit } from 'angular2/core';
 import { Parallax,
 		 ParallaxConfig } from '../../directives/ng2-parallax.directive';
 import { GistParser } from '../../directives/ng2-gist-parser.directive';
@@ -22,8 +25,12 @@ import { GistParser } from '../../directives/ng2-gist-parser.directive';
 	]
 })
 
-class tsExamples {
+class tsExamples implements AfterContentInit {
     style: any;
+    
+    ngAfterContentInit() {
+        ga('send', 'pageview');
+    }
     
 	parallaxFn(color: string, maxVal: number = 250, minVal: number = 0, otherValue: number = 0) {
 		let defaultVals: string[] = ['r', 'g', 'b', 'all'],

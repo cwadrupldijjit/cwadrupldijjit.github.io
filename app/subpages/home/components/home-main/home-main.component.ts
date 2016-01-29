@@ -1,5 +1,8 @@
+/// <reference path="../../../../../typings/google.analytics/ga" />
+
 import { Component,
-		 View } from 'angular2/core';
+		 View,
+         AfterContentInit } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 // import { } from '../'
 
@@ -15,8 +18,10 @@ import { ROUTER_DIRECTIVES } from 'angular2/router';
 	]
 })
 
-class HomeMainComponent {
-	
+class HomeMainComponent implements AfterContentInit {
+	ngAfterContentInit() {
+        ga('send', 'pageview');
+    }
 }
 
 export { HomeMainComponent };

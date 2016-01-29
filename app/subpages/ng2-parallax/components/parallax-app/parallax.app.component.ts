@@ -33,6 +33,9 @@ class ParallaxApp implements OnInit {
 	ngOnInit() {
 		console.log("ParallaxAppComponent init");
 	}
+    
+    constructor() {
+    }
 }
 
 export { ParallaxApp };
