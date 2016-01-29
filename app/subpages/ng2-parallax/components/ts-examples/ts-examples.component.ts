@@ -23,6 +23,8 @@ import { GistParser } from '../../directives/ng2-gist-parser.directive';
 })
 
 class tsExamples {
+    style: any;
+    
 	parallaxFn(color: string, maxVal: number = 250, minVal: number = 0, otherValue: number = 0) {
 		let defaultVals: string[] = ['r', 'g', 'b', 'all'],
 			result = 'rgb(';
