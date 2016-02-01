@@ -21,7 +21,7 @@ import { ROUTER_DIRECTIVES } from 'angular2/router';
 class HomeMainComponent implements AfterContentInit {
 	ngAfterContentInit() {
 		if (window.location.host.match(/localhost/i) || window.location.host.match(/192.168/i)) {
-			console.log('browsing locally')
+			console.log('browsing locally');
 		} else {
 			ga('send', 'pageview');
 		}
