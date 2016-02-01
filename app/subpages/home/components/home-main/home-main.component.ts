@@ -20,7 +20,9 @@ import { ROUTER_DIRECTIVES } from 'angular2/router';
 
 class HomeMainComponent implements AfterContentInit {
 	ngAfterContentInit() {
-        ga('send', 'pageview');
+		if (!window.location.host.match(/localhost/i)) {
+			ga('send', 'pageview');
+		}
     }
 }
 

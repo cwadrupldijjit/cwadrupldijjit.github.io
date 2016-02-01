@@ -23,7 +23,9 @@ import { GistParser } from '../../directives/ng2-gist-parser.directive'
 
 class ParallaxHome implements AfterContentInit {
 	ngAfterContentInit() {
-        ga('send', 'pageview');
+		if (!window.location.host.match(/localhost/i)) {
+			ga('send', 'pageview');
+		}
     }
 }
 

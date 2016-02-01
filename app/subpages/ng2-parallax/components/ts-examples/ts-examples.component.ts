@@ -29,7 +29,9 @@ class tsExamples implements AfterContentInit {
     style: any;
     
     ngAfterContentInit() {
-        ga('send', 'pageview');
+		if (!window.location.host.match(/localhost/i)) {
+			ga('send', 'pageview');
+		}
     }
     
 	parallaxFn(color: string, maxVal: number = 250, minVal: number = 0, otherValue: number = 0) {
