@@ -30,6 +30,15 @@ import { tsExamples } from '../ts-examples/ts-examples.component';
 ])
 
 class ParallaxApp implements OnInit {
+	isMenuOpen: boolean = false;
+	
+	toggleMenu() {
+		if (this.isMenuOpen)
+			this.isMenuOpen = false;
+		else this.isMenuOpen = true;
+		console.log('menu toggled')
+	}
+	
 	ngOnInit() {
 		console.log("ParallaxAppComponent init");
 	}
