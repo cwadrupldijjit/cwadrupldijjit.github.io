@@ -23,7 +23,9 @@ import { GistParser } from '../../directives/ng2-gist-parser.directive'
 
 class ParallaxHome implements AfterContentInit {
 	ngAfterContentInit() {
-		if (!window.location.host.match(/localhost/i)) {
+		if (window.location.host.match(/localhost/i) || window.location.host.match(/192.168/i)) {
+			console.log('browsing locally')
+		} else {
 			ga('send', 'pageview');
 		}
     }
