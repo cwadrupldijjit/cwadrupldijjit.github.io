@@ -9,11 +9,11 @@
 
 <section class="main-content">
 	<nav [ngClass]="{'nav-open': isMenuOpen, 'nav-closed': !isMenuOpen}">
-		<a href="JavaScript:void(0)" [routerLink]="['./ParallaxHome']">
+		<a href="JavaScript:void(0)" [routerLink]="['./ParallaxHome']" (click)="toggleMenu()">
 			<span>Welcome</span>
 		</a>
 		<span class="spacer"></span>
-		<a href="JavaScript:void(0)" [routerLink]="['./TsExamples']">
+		<a href="JavaScript:void(0)" [routerLink]="['./TsExamples']" (click)="toggleMenu()">
 			<span>TypeScript Example</span>
 		</a>
 		<span class="spacer"></span>
@@ -25,8 +25,8 @@
 			<span>Dart Example <span class="coming">(coming soon)</span></span>
 		</a>
 		<a href="//github.com/cwadrupldijjit/ng2-parallax" class="small-screen-only">View on GitHub</a>
-		<a href="//github.com/cwadrupldijjit/ng2-parallax/zipball/master" class="small-screen-only">Download .zip</a>
-		<a href="//github.com/cwadrupldijjit/ng2-parallax/tarball/master" class="small-screen-only">Download .tar.gz</a>
+		<a href="//github.com/cwadrupldijjit/ng2-parallax/zipball/master" class="small-screen-only" (click)="toggleMenu()">Download .zip</a>
+		<a href="//github.com/cwadrupldijjit/ng2-parallax/tarball/master" class="small-screen-only" (click)="toggleMenu()">Download .tar.gz</a>
 	</nav>
 	
 	<router-outlet></router-outlet>
