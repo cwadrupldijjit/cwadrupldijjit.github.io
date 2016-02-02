@@ -1,12 +1,12 @@
-<header layout="row">
-	<div id="avatar-main" layout="column">			
+<header>
+	<div id="avatar-main">			
 		<img src="app/assets/Avatar1.jpg" alt="Me">
 	</div>
-	<div flex id="header-right">
-		<h1 class="name" layout="row">
+	<div id="header-right">
+		<h1 class="name">
 			Samuel 
 			
-			<span flex class="hidden-text">
+			<span class="hidden-text">
 				
 			</span>
 				
@@ -15,17 +15,18 @@
 	</div>
 </header>
 
-<div id="menu-bar" ng-class="{'fix-menu': mc.menuFixed}">
+<nav id="menu-bar" [ngClass]="{'fix-menu': menuFixed}">
+	<a [routerLink]="['HomeMain']">Home</a>
 	<a [routerLink]="['Ng2Parallax', 'ParallaxHome']">ng2-parallax</a>
-</div>
+</nav>
 
-<article layout="row">
+<article>
 	<router-outlet></router-outlet>
 	
 	<aside id="project-pic-sidebar" 
-		ng-class="{
-			'sidebar-collapsed': (!mc.projOpen && !!vm.isMobile.any()), 
-			'sidebar-wide': (mc.projOpen && !!vm.isMobile.any())
+		[ngClass]="{
+			'sidebar-collapsed': (!projOpen && !isMobile), 
+			'sidebar-wide': (projOpen && !isMobile)
 		}"
 	>
 		<h3 id="project-header">Projects</h3>

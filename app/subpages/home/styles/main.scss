@@ -1,3 +1,89 @@
-#project-header {
+header {
+	display: flex;
+	flex-direction: row;
+	
+	box-shadow: 0 0 50px rgba(120, 120, 120, .7), 0 0 10px rgba(120, 120, 120, .7);
+	position: relative;
+	z-index: 100;
+	
+	& > #header-right {
+		flex: 1;
+		position: relative;
+		background-color: #19297A;
+		background-image: url('app/assets/sandy-mountain-background-1.jpg');
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: 0 25%;
+		height: 15em;
+	}
+	
+	#avatar-main {
+		width: 15em;
+		height: 15em;
+		
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.pull-right {
 	float: right;
+	align-self: flex-end;
+}
+
+.name {
+	box-sizing: border-box;
+	width: 100%;
+	font-size: calc(4em);
+	margin: 0;
+	line-height: 1em;
+	padding: 0 13vw;
+	color: white;
+	text-shadow: 0 0 10px black, 0 0 30px black;
+	
+	.hidden-text {
+		background-image: url('../assets/hidden-text-header.png');
+		background-repeat: no-repeat;
+		background-size: 50em;
+		opacity: .3;
+	}
+}
+
+#menu-bar {
+	background-color: #313747;
+	width: 100%;
+	font-size: 1.7em;
+	height: 59.44px;
+}
+
+.fix-menu {
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+#project-pic-sidebar {
+	width: 200px;
+	background-color: #202750;
+	position: absolute;
+	right: 0;
+	
+	#project-header {
+		$padding-width: 1em;
+		
+		background-color: #313747;
+		color: white;
+		position: absolute;
+		top: -59.44px;
+		right: 0;
+		z-index: 50;
+		width: calc(100% - (2* $padding-width));
+		margin: 0;
+		padding: $padding-width;
+	}
+}
+
+.sidebar-collapsed {
+	width: 200px;
 }
