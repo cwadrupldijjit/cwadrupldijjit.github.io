@@ -4,10 +4,14 @@ import { Component,
 		 View,
          AfterContentInit } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
-// import { } from '../'
+import { Observable } from 'rxjs/Rx';
+import { ElementCoord } from '../../services/element-coord.service';
 
 @Component({
-	selector: 'home-main'
+	selector: 'home-main',
+	providers: [
+		ElementCoord
+	] 
 })
 @View({
 	templateUrl : 'app/subpages/home/components/home-main/home-main.template.html',
@@ -25,7 +29,28 @@ class HomeMainComponent implements AfterContentInit {
 		} else {
 			ga('send', 'pageview');
 		}
+		
+		this.projectHeadX = this.elemService.getPosition(document.getElementById('project-header')).x;
+		
+		this.addScrollListener(this.projectHeadX);
     }
+	
+	private projectHeadX: number;
+	
+	elemService: ElementCoord;
+	
+	constructor(elemService: ElementCoord) {
+		this.elemService = elemService;
+	}
+	
+	private addScrollListener(xCoord) {
+		var sticky_menu = Observable.fromEvent(document.getElementsByTagName('body')[0], 'scroll');
+		// console.log(Observable)
+		sticky_menu
+			.mergeAll(function() {
+				console.log('does this work?');
+			});
+	}
 }
 
 export { HomeMainComponent };
