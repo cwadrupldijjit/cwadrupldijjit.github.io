@@ -12,56 +12,59 @@
 	</p>
 	<ol>
 		<li>
+			Install it via npm:
+            <code>npm install --save ng2-parallax</code>
+		</li>
+		<li>
 			From your command line, type:
 			<code>git clone https://github.com/cwadrupldijjit/ng2-parallax</code>
 		</li>
 		<li>
 			Download it from one of the links above.
 		</li>
-		<li>
-			Install it via npm <span class="coming">(coming soon)</span>
-		</li>
 	</ol>
-	<p class="note">
-		<strong>NOTE:</strong> The plan is to publish this component on npm as ng2-parallax, but it's undergoing some testing and feedback before that happens.  You could help!  Get started with it, use it, and let me know how you like/dislike it and what could make this better.
-	</p>
-		
 	<p>
-		In any case, put the file in a convenient place to reference your ng2 directives in your file system, and then make sure the rest of your files are aware of it. For TypeScript, you can import it like so:
+		If you have copied/created a version of the directive file (either <code>parallax.directive.ts</code> or <code>parallax.directive.js</code>), place the copy of the file in a convenient place to reference it in your working directory, and reference however you need to have it be available in the rest of your application.
 	</p>
-	
-	<div gist gistId="ts-imports"></div>
 	<p>
-		In both TypeScript and JavaScript, as long as you have autocompleting enabled for your text editor of choice, if you import both Parallax and ParallaxConfig, you can get some typings for the parallaxConfig object you can define in your component's class.  This is convenient for error checking and quicker autocompletion.
+		To reference it in your application, you can import it just like the rest of the Angular files and components.
 	</p>
-</div>
-
-<div>
-	<h3>Add it to your component</h3>
+    
+    <h4><i>Using the npm package:</i></h4>
+    <p>
+        First, you have to register with SystemJS where the ng2-parallax is:
+    </p>
+    <div gist gistId="ts-imports-npm-html"></div>
 	
+    <p>
+        And then you can import it from node_modules like Angular 2 components:
+    </p>
+    <div gist gistId="ts-imports-npm-ts"></div>
+    
+    <h4><i>Using a local copy:</i></h4>
+	<div gist gistId="ts-imports-local"></div>
+	<p>
+		If you import both Parallax and ParallaxConfig, you can get some typings for the parallaxConfig object you can define in your component's class so that error checking is available for that object. You'll see how to implement that shortly.
+	</p>
 	<p>
 		In order to get your component to recognize it, you need to add it to your component's annotations like so:
 	</p>
-	<!--<code data-gist-id="30363937"></code>-->
 	<div gist gistId="ts-add-directive"></div>
 	<p>
 		Or:
 	</p>
-	<!--<script src="https://gist.github.com/cwadrupldijjit/31db105441c5f416986e.js"></script>-->
 	<div gist gistId="ts-add-directive-alt"></div>
 	
 	<p>
 		You can then use the directive anywhere within that component itself by sticking it on any element you've put in your template like so:
 	</p>
 	
-	<!--<script src="https://gist.github.com/cwadrupldijjit/b9430fb819a9b8b926bd.js"></script>-->
 	<div gist gistId="add-to-html"></div>
 </div>
 <div>
 	<p>
 		This plugin assumes you've added styling to the element you've put the "parallax" attribute onto, like height, width, and background-image. If you'd like to override any of the default settings for the parallax directive when you'd like to customize the functionality. One way you can do that is by passing in a [config] object through the HTML.
 	</p>
-	<!--<script src="https://gist.github.com/cwadrupldijjit/41fbd1992acf9ad39a2f.js"></script>-->
 	<div gist gistId="customize-parallax"></div>
 	<p>
 		For more specific information, refer to the example index.html found in the examples folder for the version of the plugin you'd like to use. Currently, only the TypeScript version works. The JS version is under development and the Dart version will happen later, when demand is up for it (or when it's requested and I have time to learn Dart... :P).
