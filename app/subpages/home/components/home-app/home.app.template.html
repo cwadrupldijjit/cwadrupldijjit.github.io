@@ -21,8 +21,6 @@
 </nav>
 
 <article>
-	<router-outlet></router-outlet>
-	
 	<aside id="project-pic-sidebar" 
 		[ngClass]="{
 			'sidebar-collapsed': (!projOpen && !isMobile), 
@@ -31,4 +29,6 @@
 	>
 		<h3 id="project-header">Projects</h3>
 	</aside>
+	
+	<router-outlet></router-outlet>
 </article>

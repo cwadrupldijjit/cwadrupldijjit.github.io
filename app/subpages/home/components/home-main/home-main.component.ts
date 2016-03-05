@@ -37,11 +37,7 @@ class HomeMainComponent implements AfterContentInit {
 	
 	private projectHeadX: number;
 	
-	elemService: ElementCoord;
-	
-	constructor(elemService: ElementCoord) {
-		this.elemService = elemService;
-	}
+	constructor(public elemService: ElementCoord) {}
 	
 	private addScrollListener(xCoord) {
 		var sticky_menu = Observable.fromEvent(document.getElementsByTagName('body')[0], 'scroll');

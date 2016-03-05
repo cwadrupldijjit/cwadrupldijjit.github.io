@@ -20,8 +20,8 @@ import { ParallaxApp } from './subpages/ng2-parallax/components/parallax-app/par
 	]
 })
 @RouteConfig([
-	{ path: '/...',		 component: HomeAppComponent, as: 'Home', 		useAsDefault: true},
-	{ path: '/ng2-parallax/...', component: ParallaxApp,	  as: 'Ng2Parallax' }
+	{ path: '/...',		 component: HomeAppComponent, 	 as: 'Home', 		useAsDefault: true},
+	{ path: '/ng2-parallax/...', component: ParallaxApp, as: 'Ng2Parallax' }
 ])
 
 class AppComponent implements OnInit {
