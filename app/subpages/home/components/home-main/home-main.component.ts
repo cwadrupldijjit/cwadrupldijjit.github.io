@@ -19,6 +19,9 @@ import { ElementCoord } from '../../services/element-coord.service';
 		'app/styles/normalize.css',
 		'app/styles/main.css',
 		'app/subpages/home/styles/main.css'
+	],
+	directives: [
+		ROUTER_DIRECTIVES
 	]
 })
 
