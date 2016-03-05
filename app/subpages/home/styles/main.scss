@@ -24,8 +24,41 @@ header {
 		background-image: url('app/assets/sandy-mountain-background-1.jpg');
 		background-size: 100%;
 		background-repeat: no-repeat;
-		background-position: 0 25%;
-		height: 15em;
+        padding-bottom: 24%;
+        background-position: 0 31%;
+        
+        @media screen and (min-width: 663px) {
+            background-position: 0 25%;
+            height: 15em;
+            padding: 0;
+        }
+        
+        & > h1 {
+            box-sizing: border-box;
+            color: white;
+            text-shadow: 0 0 10px black, 0 0 30px black;
+            font-size: 3em;
+            line-height: 1em;
+            margin: 0;
+            position: absolute;
+            text-align: center;
+            top: -1.5em;
+            width: 100%;
+            
+            @media screen and (min-width: 663px) {
+                font-size: 4em;
+                padding: 0 13vw;
+                position: static;
+                text-align: left;
+            }
+            
+            // .hidden-text {
+            //     background-image: url('../assets/hidden-text-header.png');
+            //     background-repeat: no-repeat;
+            //     background-size: 50em;
+            //     opacity: .3;
+            // }
+        }
 	}
 	
 	#avatar-main {
@@ -37,6 +70,7 @@ header {
 		@media screen and (min-width: 663px) {
 			width: 15em;
 			height: 15em;
+            padding: 0;
 		}
 		
 		img {
@@ -51,24 +85,6 @@ header {
 .pull-right {
 	float: right;
 	align-self: flex-end;
-}
-
-.name {
-	box-sizing: border-box;
-	width: 100%;
-	font-size: calc(4em);
-	margin: 0;
-	line-height: 1em;
-	padding: 0 13vw;
-	color: white;
-	text-shadow: 0 0 10px black, 0 0 30px black;
-	
-	.hidden-text {
-		background-image: url('../assets/hidden-text-header.png');
-		background-repeat: no-repeat;
-		background-size: 50em;
-		opacity: .3;
-	}
 }
 
 #menu-bar {
