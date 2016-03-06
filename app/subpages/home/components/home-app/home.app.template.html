@@ -18,9 +18,7 @@
 <nav id="menu-bar" [ngClass]="{'fix-menu': menuFixed}">
 	<a [routerLink]="['HomeMain']">Home</a>
 	<a [routerLink]="['Ng2Parallax', 'ParallaxHome']">ng2-parallax</a>
-</nav>
-
-<article>
+	
 	<aside id="project-pic-sidebar" 
 		[ngClass]="{
 			'sidebar-collapsed': (!projOpen && !isMobile), 
@@ -29,6 +27,8 @@
 	>
 		<h3 id="project-header">Projects</h3>
 	</aside>
-	
+</nav>
+
+<article>
 	<router-outlet></router-outlet>
 </article>

@@ -18,7 +18,8 @@ import { ElementCoord } from '../../services/element-coord.service';
 	styleUrls : [
 		'app/styles/normalize.css',
 		'app/styles/main.css',
-		'app/subpages/home/styles/main.css'
+		'app/subpages/home/styles/main.css',
+		'app/subpages/home/components/home-main/home-main.styles.css'
 	],
 	directives: [
 		ROUTER_DIRECTIVES

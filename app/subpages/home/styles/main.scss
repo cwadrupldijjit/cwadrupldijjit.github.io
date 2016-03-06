@@ -113,9 +113,16 @@ header {
 
 #menu-bar {
 	background-color: #313747;
-	font-size: 1.7em;
-	height: 59.44px;
+	display: flex;
+	font-size: 1.3em;
+	height: 2.4em;
+	position: relative;
 	width: 100%;
+	
+	a {
+		color: white;
+		padding: 13px 25px;
+	}
 }
 
 .fix-menu {
@@ -125,26 +132,31 @@ header {
 }
 
 #project-pic-sidebar {
-	background-color: #202750;
-	position: absolute;
-	right: 0;
-	width: 200px;
+	display: none;
 	
-	#project-header {
-		$padding-width: 1em;
-		
-		background-color: #313747;
-		color: white;
-		margin: 0;
-		padding: $padding-width;
+	@media screen and (min-width: 663px) {
+		display: flex;
+		height: 100%;
 		position: absolute;
 		right: 0;
-		top: -59.44px;
-		width: calc(100% - (2 * $padding-width));
-		z-index: 50;
+		width: 200px;
+		
+		#project-header {
+			$padding-width: .5em;
+			$padding-height: .5em;
+			
+			background-color: #313747;
+			color: white;
+			flex: 1;
+			line-height: 1em;
+			margin: 0;
+			padding: $padding-height $padding-width;
+			text-align: center;
+			z-index: 50;
+		}
 	}
 }
 
-.sidebar-collapsed {
-	width: 200px;
+article {
+	height: 100%;
 }

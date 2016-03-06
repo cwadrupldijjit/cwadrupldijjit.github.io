@@ -1,3 +1,29 @@
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+a:link, a:visited {
+	color: #6287F5;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:hover {
+	color: #62aaF5;
+	text-decoration: underline;
+}
+
 .hidden-snippets {
 	display: none;
 }
+
+app {
+	height: 100%;
+}
+
+app > router-outlet + *,
+article > router-outlet + * {
+	height: 100%;
+}
+
