@@ -10,10 +10,6 @@ header {
 	width: 100%;
 	z-index: 100;
 	
-	@media screen and (min-width: 663px) {
-		flex-direction: row;
-	}
-	
 	& > #header-right {
 		background-image: url('app/assets/sandy-mountain-background-1.jpg');
         background-position: 0 31%;
@@ -22,12 +18,6 @@ header {
 		flex: 1;
         padding-bottom: 24%;
 		position: relative;
-        
-        @media screen and (min-width: 663px) {
-            background-position: 0 25%;
-            height: 15em;
-            padding: 0;
-        }
         
         & > h1 {
             box-sizing: border-box;
@@ -40,13 +30,6 @@ header {
             text-align: center;
             top: -1.5em;
             width: 100%;
-            
-            @media screen and (min-width: 663px) {
-                font-size: 4em;
-                padding: 0 13vw;
-                position: static;
-                text-align: left;
-            }
             
             // .hidden-text {
             //     background-image: url('../assets/hidden-text-header.png');
@@ -63,17 +46,62 @@ header {
 		position: relative;
 		width: 100%;
 		
-		@media screen and (min-width: 663px) {
-			height: 15em;
-            padding: 0;
-			width: 15em;
-		}
-		
 		img {
 			left: 0;
 			position: absolute;
 			top: 0;
 			width: 100%;
+		}
+	}
+	
+	@media screen and (orientation: landscape) {
+		$heightVal: 9em;
+		flex-direction: row;
+		height: $heightVal;
+		
+		#avatar-main {
+			height: $heightVal;
+            padding: 0;
+			width: $heightVal;
+		}
+		
+		& > #header-right {
+            background-position: 0 20%;
+			background-size: 101%;
+            padding: 0;
+			
+			& > h1 {
+                padding: 0 13vw;
+                position: relative;
+                text-align: left;
+				top: 15px;
+			}
+		}
+	}
+	
+	@media screen and (min-width: 663px) {
+		$heightVal: 15em;
+		
+		flex-direction: row;
+		height: $heightVal;
+		
+		#avatar-main {
+			height: $heightVal;
+            padding: 0;
+			width: $heightVal;
+		}
+		
+		& > #header-right {
+            background-position: 0 25%;
+            height: 15em;
+            padding: 0;
+			
+			& > h1 {
+                font-size: 4em;
+                padding: 0 13vw;
+                position: static;
+                text-align: left;
+			}
 		}
 	}
 }
